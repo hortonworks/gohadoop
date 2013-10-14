@@ -7,10 +7,10 @@ package hadoop_yarn
 import proto "code.google.com/p/goprotobuf/proto"
 import json "encoding/json"
 import math "math"
-import "github.com/hortonworks/gohadoop"
-import hadoop_common "github.com/hortonworks/gohadoop/hadoop_common"
-import hadoop_ipc_client "github.com/hortonworks/gohadoop/hadoop_common/ipc/client"
-import yarn_conf "github.com/hortonworks/gohadoop/hadoop_yarn/conf"
+import "github.com/xiocode/gohadoop"
+import hadoop_common "github.com/xiocode/gohadoop/hadoop_common"
+import hadoop_ipc_client "github.com/xiocode/gohadoop/hadoop_common/ipc/client"
+import yarn_conf "github.com/xiocode/gohadoop/hadoop_yarn/conf"
 import "github.com/nu7hatch/gouuid"
 
 // Reference proto, json, and math imports to suppress error if they are not otherwise used.
