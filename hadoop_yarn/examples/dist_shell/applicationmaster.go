@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/xiocode/gohadoop/hadoop_yarn"
-	"github.com/xiocode/gohadoop/hadoop_yarn/conf"
-	"github.com/xiocode/gohadoop/hadoop_yarn/yarn_client"
+	"github.com/hortonworks/gohadoop/hadoop_yarn"
+	"github.com/hortonworks/gohadoop/hadoop_yarn/conf"
+	"github.com/hortonworks/gohadoop/hadoop_yarn/yarn_client"
 	"log"
 	"os"
 	"strconv"

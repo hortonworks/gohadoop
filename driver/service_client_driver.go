@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/xiocode/gohadoop/hadoop_yarn"
-	yarn_conf "github.com/xiocode/gohadoop/hadoop_yarn/conf"
+	"github.com/hortonworks/gohadoop/hadoop_yarn"
+	yarn_conf "github.com/hortonworks/gohadoop/hadoop_yarn/conf"
 	"log"
 )
 
