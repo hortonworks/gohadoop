@@ -9,9 +9,9 @@ import json "encoding/json"
 import math "math"
 
 import (
+	"github.com/hortonworks/gohadoop"
+	hadoop_ipc_client "github.com/hortonworks/gohadoop/hadoop_common/ipc/client"
 	"github.com/nu7hatch/gouuid"
-	"github.com/xiocode/gohadoop"
-	hadoop_ipc_client "github.com/xiocode/gohadoop/hadoop_common/ipc/client"
 	"net"
 	"strconv"
 )

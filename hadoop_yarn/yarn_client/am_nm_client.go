@@ -1,7 +1,7 @@
 package yarn_client
 
 import (
-	"github.com/xiocode/gohadoop/hadoop_yarn"
+	"github.com/hortonworks/gohadoop/hadoop_yarn"
 )
 
 type AMNMClient struct {
