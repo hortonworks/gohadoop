@@ -1,9 +1,9 @@
-package gohadoop
+package hadoop
 
 import (
 	"bytes"
 	"encoding/binary"
-	"github.com/hortonworks/gohadoop/hadoop_common"
+	"github.com/xiocode/gohadoop/hadoop_common"
 	"log"
 	"os/user"
 	"runtime"

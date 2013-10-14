@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/hortonworks/gohadoop"
-	"github.com/hortonworks/gohadoop/hadoop_common"
-	"github.com/hortonworks/gohadoop/hadoop_common/ipc/client"
-	"github.com/hortonworks/gohadoop/hadoop_yarn"
 	"github.com/nu7hatch/gouuid"
+	"github.com/xiocode/gohadoop"
+	"github.com/xiocode/gohadoop/hadoop_common"
+	"github.com/xiocode/gohadoop/hadoop_common/ipc/client"
+	"github.com/xiocode/gohadoop/hadoop_yarn"
 	"log"
 )
 
