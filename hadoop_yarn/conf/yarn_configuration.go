@@ -1,7 +1,7 @@
 package conf
 
 import (
-	hadoop_conf "github.com/hortonworks/gohadoop/hadoop_common/conf"
+	hadoop_conf "github.com/xiocode/gohadoop/hadoop_common/conf"
 )
 
 const (

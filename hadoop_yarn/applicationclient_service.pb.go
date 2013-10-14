@@ -7,10 +7,10 @@ package hadoop_yarn
 import proto "code.google.com/p/goprotobuf/proto"
 import json "encoding/json"
 import math "math"
-import "github.com/gohadoop"
-import hadoop_common "github.com/gohadoop/hadoop_common"
-import hadoop_ipc_client "github.com/gohadoop/hadoop_common/ipc/client" 
-import yarn_conf "github.com/gohadoop/hadoop_yarn/conf"
+import "github.com/xiocode/gohadoopp"
+import hadoop_common "github.com/xiocode/gohadoopp/hadoop_common"
+import hadoop_ipc_client "github.com/xiocode/gohadoopp/hadoop_common/ipc/client"
+import yarn_conf "github.com/xiocode/gohadoopp/hadoop_yarn/conf"
 import "github.com/nu7hatch/gouuid"
 
 // Reference proto, json, and math imports to suppress error if they are not otherwise used.
@@ -80,10 +80,10 @@ func (c *ApplicationClientProtocolServiceClient) CancelDelegationToken(in *hadoo
 
 // DialApplicationClientProtocolService connects to an ApplicationClientProtocolService at the specified network address.
 func DialApplicationClientProtocolService(conf yarn_conf.YarnConfiguration) (ApplicationClientProtocolService, error) {
-  clientId, _ := uuid.NewV4()
-  ugi, _ := gohadoop.CreateSimpleUGIProto()
-  serverAddress, _ := conf.GetRMAddress()
-  c := &hadoop_ipc_client.Client{ClientId: clientId, Ugi: ugi, ServerAddress: serverAddress}
+	clientId, _ := uuid.NewV4()
+	ugi, _ := gohadoop.CreateSimpleUGIProto()
+	serverAddress, _ := conf.GetRMAddress()
+	c := &hadoop_ipc_client.Client{ClientId: clientId, Ugi: ugi, ServerAddress: serverAddress}
 	return &ApplicationClientProtocolServiceClient{c}, nil
 }
 

@@ -3,7 +3,7 @@ package gohadoop
 import (
 	"bytes"
 	"encoding/binary"
-	"github.com/hortonworks/gohadoop/hadoop_common"
+	"github.com/xiocode/gohadoop/hadoop_common"
 	"log"
 	"os/user"
 	"runtime"
