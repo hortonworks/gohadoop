@@ -8,9 +8,9 @@ import proto "code.google.com/p/goprotobuf/proto"
 import json "encoding/json"
 import math "math"
 
-import "github.com/xiocode/gohadoopp"
-import hadoop_ipc_client "github.com/xiocode/gohadoopp/hadoop_common/ipc/client"
-import yarn_conf "github.com/xiocode/gohadoopp/hadoop_yarn/conf"
+import "github.com/xiocode/gohadoop"
+import hadoop_ipc_client "github.com/xiocode/gohadoop/hadoop_common/ipc/client"
+import yarn_conf "github.com/xiocode/gohadoop/hadoop_yarn/conf"
 import "github.com/nu7hatch/gouuid"
 
 // Reference proto, json, and math imports to suppress error if they are not otherwise used.

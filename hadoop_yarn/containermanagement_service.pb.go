@@ -10,8 +10,8 @@ import math "math"
 
 import (
 	"github.com/nu7hatch/gouuid"
-	"github.com/xiocode/gohadoopp"
-	hadoop_ipc_client "github.com/xiocode/gohadoopp/hadoop_common/ipc/client"
+	"github.com/xiocode/gohadoop"
+	hadoop_ipc_client "github.com/xiocode/gohadoop/hadoop_common/ipc/client"
 	"net"
 	"strconv"
 )
