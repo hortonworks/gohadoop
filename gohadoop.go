@@ -1,4 +1,4 @@
-package gohadoop
+package hadoop
 
 import (
 	"bytes"

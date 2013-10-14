@@ -9,11 +9,11 @@ import json "encoding/json"
 import math "math"
 
 import (
-  "net"
-  "strconv"
-  "github.com/gohadoop"
-  hadoop_ipc_client "github.com/gohadoop/hadoop_common/ipc/client"
-  "github.com/nu7hatch/gouuid"
+	"github.com/nu7hatch/gouuid"
+	"github.com/hortonworks/gohadoop"
+	hadoop_ipc_client "github.com/hortonworks/gohadoop/hadoop_common/ipc/client"
+	"net"
+	"strconv"
 )
 
 // Reference proto, json, and math imports to suppress error if they are not otherwise used.
@@ -48,9 +48,9 @@ func (c *ContainerManagementProtocolServiceClient) GetContainerStatuses(in *GetC
 
 // DialContainerManagementProtocolService connects to an ContainerManagementProtocolService at the specified network address.
 func DialContainerManagementProtocolService(host string, port int) (ContainerManagementProtocolService, error) {
-  clientId, _ := uuid.NewV4()
-  ugi, _ := gohadoop.CreateSimpleUGIProto()
-  c := &hadoop_ipc_client.Client{ClientId: clientId, Ugi: ugi, ServerAddress: net.JoinHostPort(host, strconv.Itoa(port))}
+	clientId, _ := uuid.NewV4()
+	ugi, _ := gohadoop.CreateSimpleUGIProto()
+	c := &hadoop_ipc_client.Client{ClientId: clientId, Ugi: ugi, ServerAddress: net.JoinHostPort(host, strconv.Itoa(port))}
 	return &ContainerManagementProtocolServiceClient{c}, nil
 }
 

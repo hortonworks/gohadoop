@@ -1,11 +1,11 @@
 package main
 
 import (
+	"github.com/nu7hatch/gouuid"
 	"github.com/hortonworks/gohadoop"
 	"github.com/hortonworks/gohadoop/hadoop_common"
 	"github.com/hortonworks/gohadoop/hadoop_common/ipc/client"
 	"github.com/hortonworks/gohadoop/hadoop_yarn"
-	"github.com/nu7hatch/gouuid"
 	"log"
 )
 

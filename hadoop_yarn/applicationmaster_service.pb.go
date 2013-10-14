@@ -8,9 +8,9 @@ import proto "code.google.com/p/goprotobuf/proto"
 import json "encoding/json"
 import math "math"
 
-import "github.com/gohadoop"
-import hadoop_ipc_client "github.com/gohadoop/hadoop_common/ipc/client"
-import yarn_conf "github.com/gohadoop/hadoop_yarn/conf"
+import "github.com/hortonworks/gohadoop"
+import hadoop_ipc_client "github.com/hortonworks/gohadoop/hadoop_common/ipc/client"
+import yarn_conf "github.com/hortonworks/gohadoop/hadoop_yarn/conf"
 import "github.com/nu7hatch/gouuid"
 
 // Reference proto, json, and math imports to suppress error if they are not otherwise used.
@@ -44,10 +44,10 @@ func (c *ApplicationMasterProtocolServiceClient) Allocate(in *AllocateRequestPro
 }
 
 func DialApplicationMasterProtocolService(conf yarn_conf.YarnConfiguration) (ApplicationMasterProtocolService, error) {
-  clientId, _ := uuid.NewV4()
-  ugi, _ := gohadoop.CreateSimpleUGIProto()
-  serverAddress, _ := conf.GetRMSchedulerAddress()
-  c := &hadoop_ipc_client.Client{ClientId: clientId, Ugi: ugi, ServerAddress: serverAddress}
+	clientId, _ := uuid.NewV4()
+	ugi, _ := gohadoop.CreateSimpleUGIProto()
+	serverAddress, _ := conf.GetRMSchedulerAddress()
+	c := &hadoop_ipc_client.Client{ClientId: clientId, Ugi: ugi, ServerAddress: serverAddress}
 	return &ApplicationMasterProtocolServiceClient{c}, nil
 }
 
