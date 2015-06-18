@@ -2,7 +2,7 @@ package ipc
 
 import (
 	"bytes"
-	"code.google.com/p/goprotobuf/proto"
+	"github.com/golang/protobuf/proto"
 	"errors"
 	"fmt"
 	"github.com/hortonworks/gohadoop"
