@@ -4,15 +4,16 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
+	"log"
+	"net"
+	"strings"
+	"sync"
+
 	"github.com/golang/protobuf/proto"
 	"github.com/hortonworks/gohadoop"
 	"github.com/hortonworks/gohadoop/hadoop_common"
 	"github.com/hortonworks/gohadoop/hadoop_common/security"
 	"github.com/nu7hatch/gouuid"
-	"log"
-	"net"
-	"strings"
-	"sync"
 )
 
 type Client struct {
@@ -202,8 +203,11 @@ func writeConnectionHeader(conn *connection, authProtocol gohadoop.AuthProtocol)
 
 func writeConnectionContext(c *Client, conn *connection, connectionId *connection_id, authProtocol gohadoop.AuthProtocol) error {
 	// Create hadoop_common.IpcConnectionContextProto
-	ugi, _ := gohadoop.CreateSimpleUGIProto()
-	ipcCtxProto := hadoop_common.IpcConnectionContextProto{UserInfo: ugi, Protocol: &connectionId.protocol}
+	if c.Ugi == nil {
+		ugi, _ := gohadoop.CreateSimpleUGIProto()
+		c.Ugi = ugi
+	}
+	ipcCtxProto := hadoop_common.IpcConnectionContextProto{UserInfo: c.Ugi, Protocol: &connectionId.protocol}
 
 	// Create RpcRequestHeaderProto
 	var callId int32 = -3
