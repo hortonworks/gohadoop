@@ -1,10 +1,11 @@
 package security
 
 import (
-	"github.com/hortonworks/gohadoop/hadoop_common"
 	"log"
 	"os/user"
 	"sync"
+
+	"github.com/hortonworks/gohadoop/hadoop_common"
 )
 
 /** a (very) basic UserGroupInformation implementation for storing user data/tokens,
@@ -92,5 +93,15 @@ func (ugi *UserGroupInformation) AddUserToken(token *hadoop_common.TokenProto) {
 func GetCurrentUser() *UserGroupInformation {
 	initializeCurrentUser()
 
+	return currentUserGroupInformation
+}
+
+func SetCurrentUser(userinfo *hadoop_common.UserInformationProto) *UserGroupInformation {
+	once.Do(func() {
+		currentUserGroupInformation = Allocate(
+			userinfo,
+			nil,
+		)
+	})
 	return currentUserGroupInformation
 }
